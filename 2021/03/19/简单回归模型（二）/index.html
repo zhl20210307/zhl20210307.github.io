@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
 <meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/异方差性.PNG">
 <meta property="article:published_time" content="2021-03-19T10:05:06.000Z">
-<meta property="article:modified_time" content="2021-03-20T14:22:49.098Z">
+<meta property="article:modified_time" content="2021-03-20T15:14:33.002Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-20 22:22:49" itemprop="dateModified" datetime="2021-03-20T22:22:49+08:00">2021-03-20</time>
+                <time title="修改时间：2021-03-20 23:14:33" itemprop="dateModified" datetime="2021-03-20T23:14:33+08:00">2021-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,37 +301,20 @@
 </table>
 </div>
 <h3 id="过原点回归"><a href="#过原点回归" class="headerlink" title="过原点回归"></a>过原点回归</h3><p>在分析问题时，有些情况我们希望x=0时y=0，这时得到的方程$\bar y=\bar \beta_1 x$又被称为<strong>过原点回归</strong>。通过最小化残差平方和的一阶条件，我们可以得到</p>
-<script type="math/tex; mode=display">\bar \beta_1=\frac{\sum_{i=1}^nx_iy_i}{\sum_{i=1}^nx_i^2}$$(分子不为零)
-
-同样的，判定系数 $R^2=1-\frac{\sum_{i=1}^n(y_i-\bar \beta_1x_i)^2}{\sum_{i=1}^ny_i^2}$
-
-使用过原点回归需要非常强的前提条件，在实际分析中应用不多。
-
-### 估计量的性质
-
-#### 高斯-马尔科夫假定
-
-定理：对于线性回归模型，在某些约束条件下，由最小二乘法得到的估计量（估计子），即线性回归模型的系数，是最优的线性无偏估计子。
-
-为了判断点估计的无偏性、有效性等性质，需要对模型做出一些假定
-
-1.线性于参数：$y=\beta_0+\beta_1x+u$
-
-2.随机抽样：从总体中随机抽取样本，样本容量为n。同时，可以把随机样本的形式将方程写为：$y_i=\beta_0+\beta_1x_i+u_i$,其中$u_i$是第i次观测时的误差或干扰。
-
-3.解释变量的样本有波动：即$x_i$的标准差不为零。
-
-4.零条件均值假定：对给定任何x值，误差的期望都为零：$E(u|x)=0$
-
-#### OLS估计量的无偏性
-
-基于以上四个假定，可以证明出OLS估计量的无偏性：
-
-首先，我们把$\beta_1$的估计量改写为$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)y_i}{\sum_{i=1}^n(x_i-\bar x)^2}$
-
-将随驾抽样形式的方程代入：(定义$SST_X=\sum_{i=1}^n(x_i-\bar x)^2$)
-
-$$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\frac{\beta_0\sum_{i=1}^n(x_I-\bar x)+\beta_1\sum_{i=1}^n(x_i-\bar x)x_i+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}=\frac{\beta_1SST_x+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}</script><p>进一步整理，得到$\hat \beta<em>1=\beta_1+(1/SST_x)\sum</em>{i=1}^nd_iu_i$  其中($d_i=x_i-\bar x$)</p>
+<script type="math/tex; mode=display">\bar \beta_1=\frac{\sum_{i=1}^nx_iy_i}{\sum_{i=1}^nx_i^2}</script><p>(分子不为零)</p>
+<p>同样的，判定系数 </p>
+<script type="math/tex; mode=display">R^2=1-\frac{\sum_{i=1}^n(y_i-\bar \beta_1x_i)^2}{\sum_{i=1}^ny_i^2}</script><p>使用过原点回归需要非常强的前提条件，在实际分析中应用不多。</p>
+<h3 id="估计量的性质"><a href="#估计量的性质" class="headerlink" title="估计量的性质"></a>估计量的性质</h3><h4 id="高斯-马尔科夫假定"><a href="#高斯-马尔科夫假定" class="headerlink" title="高斯-马尔科夫假定"></a>高斯-马尔科夫假定</h4><p>定理：对于线性回归模型，在某些约束条件下，由最小二乘法得到的估计量（估计子），即线性回归模型的系数，是最优的线性无偏估计子。</p>
+<p>为了判断点估计的无偏性、有效性等性质，需要对模型做出一些假定</p>
+<p>1.线性于参数：$y=\beta_0+\beta_1x+u$</p>
+<p>2.随机抽样：从总体中随机抽取样本，样本容量为n。同时，可以把随机样本的形式将方程写为：$y_i=\beta_0+\beta_1x_i+u_i$,其中$u_i$是第i次观测时的误差或干扰。</p>
+<p>3.解释变量的样本有波动：即$x_i$的标准差不为零。</p>
+<p>4.零条件均值假定：对给定任何x值，误差的期望都为零：$E(u|x)=0$</p>
+<h4 id="OLS估计量的无偏性"><a href="#OLS估计量的无偏性" class="headerlink" title="OLS估计量的无偏性"></a>OLS估计量的无偏性</h4><p>基于以上四个假定，可以证明出OLS估计量的无偏性：</p>
+<p>首先，我们把$\beta_1$的估计量改写为</p>
+<script type="math/tex; mode=display">\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)y_i}{\sum_{i=1}^n(x_i-\bar x)^2}</script><p>将随驾抽样形式的方程代入：其中 $SST<em>X=\sum</em>{i=1}^n(x_i-\bar x)^2$</p>
+<script type="math/tex; mode=display">\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\frac{\beta_0\sum_{i=1}^n(x_I-\bar x)+\beta_1\sum_{i=1}^n(x_i-\bar x)x_i+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}=\frac{\beta_1SST_x+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}</script><p>进一步整理，得到 </p>
+<script type="math/tex; mode=display">\hat \beta_1=\beta_1+(1/SST_x)\sum_{i=1}^n d_i u_i</script><p>其中 $d_i=x_i-\bar x$</p>
 <p>得到上式，就可证明出OLS的无偏性：</p>
 <p><strong>定理：</strong>基于假定1-4，对任意$\beta_1$和$\beta_0$都有 $E(\hat \beta_0)=\beta_0$,$E(\hat \beta_1)=\beta_1$。</p>
 <script type="math/tex; mode=display">
@@ -351,8 +334,7 @@ $$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\f
 <p><img src="/.com//Blog\source\_posts\简单回归模型（二）\异方差性.PNG" alt="异方差性下的简单回归分析"></p>
 <p><strong>定理：OLS估计量的抽样方差</strong></p>
 <p>在假定1-5下，我们有</p>
-<p>$Var(\hat \beta<em>1)=\sigma^2/SST_x$ 和 $Var(\hat \beta_0)=\frac{\sigma^2n^{-1}\sum</em>{i=1}^nx<em>i^2}{\sum</em>{i=1}^n(x_i-\bar x)^2}$</p>
-<p>证明：</p>
+<script type="math/tex; mode=display">Var(\hat \beta_1)=\sigma^2/SST_x</script><script type="math/tex; mode=display">Var(\hat \beta_0)=\frac{\sigma^2n^{-1}\sum_{i=1}^nx_i^2}{\sum_{i=1}^n(x_i-\bar x)^2}</script><p>证明：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \operatorname{Var}\left(\hat{\beta}_{1}\right) &=\left(1 / \operatorname{SST}_{x}\right)^{2} \operatorname{Var}\left(\sum_{i=1}^{n} d_{i} u_{i}\right)=\left(1 / \mathrm{SST}_{x}\right)^{2}\left(\sum_{i=1}^{\infty} d^{\prime} \operatorname{Var}\left(u_{i}\right)\right) \\
@@ -461,7 +443,7 @@ $$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\f
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="nav-number">1.1.</span> <span class="nav-text">拟合优度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E5%8D%95%E4%BD%8D%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">度量单位与函数形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E5%8E%9F%E7%82%B9%E5%9B%9E%E5%BD%92"><span class="nav-number">1.3.</span> <span class="nav-text">过原点回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">OLS估计量的方差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="nav-number">1.3.2.</span> <span class="nav-text">误差方差的估计</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="nav-number">1.1.</span> <span class="nav-text">拟合优度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E5%8D%95%E4%BD%8D%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">度量单位与函数形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E5%8E%9F%E7%82%B9%E5%9B%9E%E5%BD%92"><span class="nav-number">1.3.</span> <span class="nav-text">过原点回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.</span> <span class="nav-text">估计量的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%81%87%E5%AE%9A"><span class="nav-number">1.4.1.</span> <span class="nav-text">高斯-马尔科夫假定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%97%A0%E5%81%8F%E6%80%A7"><span class="nav-number">1.4.2.</span> <span class="nav-text">OLS估计量的无偏性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE"><span class="nav-number">1.4.3.</span> <span class="nav-text">OLS估计量的方差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="nav-number">1.4.4.</span> <span class="nav-text">误差方差的估计</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
