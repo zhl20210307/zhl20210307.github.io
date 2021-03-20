@@ -22,18 +22,21 @@
 
   <meta name="description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单回归模型">
-<meta property="og:url" content="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:title" content="简单回归模型（二）">
+<meta property="og:url" content="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Myblog">
 <meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-12T00:10:29.038Z">
-<meta property="article:modified_time" content="2021-03-19T12:29:40.203Z">
+<meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
+<meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/异方差性.PNG">
+<meta property="article:published_time" content="2021-03-19T10:05:06.000Z">
+<meta property="article:modified_time" content="2021-03-20T14:22:49.098Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
 
-<link rel="canonical" href="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+<link rel="canonical" href="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>简单回归模型 | Myblog</title>
+  <title>简单回归模型（二） | Myblog</title>
   
 
 
@@ -173,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -186,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          简单回归模型
+          简单回归模型（二）
         </h1>
 
         <div class="post-meta">
@@ -196,14 +199,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-03-12 08:10:29" itemprop="dateCreated datePublished" datetime="2021-03-12T08:10:29+08:00">2021-03-12</time>
+              <time title="创建时间：2021-03-19 18:05:06" itemprop="dateCreated datePublished" datetime="2021-03-19T18:05:06+08:00">2021-03-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-19 20:29:40" itemprop="dateModified" datetime="2021-03-19T20:29:40+08:00">2021-03-19</time>
+                <time title="修改时间：2021-03-20 22:22:49" itemprop="dateModified" datetime="2021-03-20T22:22:49+08:00">2021-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,8 +234,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -249,70 +252,117 @@
       
         <p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p>
 <span id="more"></span>
-<h2 id="简单回归模型"><a href="#简单回归模型" class="headerlink" title="简单回归模型"></a>简单回归模型</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>回归分析：在其他条件不变的情况下，考察一个变量对另一个变量的影响。</p>
+<h2 id="简单回归模型（二）"><a href="#简单回归模型（二）" class="headerlink" title="简单回归模型（二）"></a>简单回归模型（二）</h2><h3 id="拟合优度"><a href="#拟合优度" class="headerlink" title="拟合优度"></a>拟合优度</h3><p>已知：$y_i=\hat y_i+\hat u_i$,可以把OLS分成拟合值和残差两个部分，在样本中，拟合值和残差是不相关的。定义<strong>总平方和（SST）</strong>、<strong>解释平方和（SSE）</strong>，和<strong>残差平方和（SSR）</strong>如下：</p>
+<script type="math/tex; mode=display">SST=\sum_{i=1}^{n}(y_i-\bar y)^2</script><script type="math/tex; mode=display">SSR=\sum_{i=1}^{n}(\hat y_i-\bar y)^2</script><script type="math/tex; mode=display">SSR=\sum_{i=1}^{n}u_i^2=\sum_{i-1}^{n}(y_i-\bar y)^2</script><p>容易证得：$SST=SSE+SSR$</p>
+<p>假定总平方和SST不为零，我们可以通过将方程两边同时除以SST得到$1=SSE/SST+SSR/SST$。回归的$R^2$有时又被称为判定系数，是被解释波动与总波动之比，被定义为：</p>
+<script type="math/tex; mode=display">R^2=SSE/SST=1-SSR/SST</script><p>根据该方程，$R^2$的值总是介于0和1之间。若所有数据点都落在同一条直线上，此时$R^2=1$;同理，一个接近于零的$R^2$给出了一个糟糕的拟合，因为$y_i$的波动极少能被$\bar y$所解释（后者全部落在OLS回归线上）。另外，可以证明$R^2$等于$y_i$和$x_i$样本相关系数的平方：</p>
+<script type="math/tex; mode=display">R^2=\frac{\sum_{i=1}^n\hat y_i^2}{\sum_{i=1}^ny_i^2}=\frac{\hat \beta_1^2\sum_{i=1}^n x_i^2}{\sum_{i=1}^ny_i^2}=\cdots=r^2</script><p>(太麻烦了不写了)</p>
+<p>注意：$R^2$不能作为评价计量分析成功与否的主要准则！</p>
+<h3 id="度量单位与函数形式"><a href="#度量单位与函数形式" class="headerlink" title="度量单位与函数形式"></a>度量单位与函数形式</h3><p>当自变量和因变量的单位发生变化时，OLS的估计值也会发生变化。一般的自变量被除以或乘以一个非零的常数c时，OLS的斜率和截距也会分别被乘以或除以c，但判定系数$R^2$不会因y或x的单位变化而变化。</p>
+<p>我们也可以把许多非线性因素引入到简单回归分析之中，例如：对于一个变量为非线性形式的模型：$Y=\beta_0X^\beta_1$,我们可以通过一定的函数变换得到一个新的模型，如$lnY=ln\beta_0+\beta_1lnX$,令$W=lnY$，$Z=lnX$,$\alpha_0=ln\beta_0$，就能够得到$W=\alpha_0+\beta_1Z$。再对上式进行OLS估计，可以得到$\beta_1$的无偏估计量$\hat \beta_1$和$\alpha_0$的无偏估计量$\hat \alpha_0$。</p>
+<p>但是通过上述变换却无法得到$\beta_1$的无偏估计量$\hat \beta_1$，因为$e^{\hat \alpha_0}$并不是$\beta_0$的一个好的估计量。然而，在回归分析中一般都关心斜率系数而不是截距系数，因此我们只要能够正确估计出$\beta_1$，仍然可以看作是一个线性模型。</p>
+<p>对解释变量进行某种形式的函数变换，不会改变模型的参数线性，但会使得模型的经济意义更加合理。主要有一下三种常用的函数形式：</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">X</th>
-<th style="text-align:center">自变量</th>
-<th style="text-align:center">解释变量</th>
+<th>模型</th>
+<th>因变量</th>
+<th>自变量</th>
+<th>对$\beta_1$的解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">因变量</td>
-<td style="text-align:center">被解释变量</td>
+<td>水平值-水平值</td>
+<td>y</td>
+<td>x</td>
+<td>$\triangle y=\beta_1\triangle x$</td>
+</tr>
+<tr>
+<td>水平值-对数</td>
+<td>y</td>
+<td>log(x)</td>
+<td>$\triangle y=(\beta_1/100)\%\triangle x$</td>
+</tr>
+<tr>
+<td>对数-水平值</td>
+<td>log(y)</td>
+<td>x</td>
+<td>$\%\triangle y=(100\beta_1)\triangle x$</td>
+</tr>
+<tr>
+<td>对数-对数</td>
+<td>log(y)</td>
+<td>log(x)</td>
+<td>$\%\triangle y=\beta_1\%\triangle x$</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>设变量u表示关系式中的干扰项，表示除X之外其他影响Y的因素。</p>
-<p>我们用一个简单的方程来表示它们之间的关系：</p>
-<script type="math/tex; mode=display">Y=\beta_0+\beta_1 x+u</script><p>当X发生变化时，$\triangle Y=\beta_1\triangle X+\triangle u$,如果$\triangle u=0$,那么$\triangle Y=\beta_1\triangle X$,从而可以用$\beta_1$衡量X对Y的影响。</p>
-<h4 id="零条件均值假定"><a href="#零条件均值假定" class="headerlink" title="零条件均值假定"></a>零条件均值假定</h4><p>如何保证其他条件不变？简单地，如果X和u是独立的，即X的变化不会对u造成系统性影响，那么$\beta_1$就可以度量其他条件不变的情况下X对Y的影响。在计量分析中，采用一个更弱的技术性假定——<strong>零条件均值假定</strong></p>
-<p>首先，对于$Y=\beta_0+\beta_1 x+v$，若$E(v)=a=0$，令u=v;若$E(v)=a\neq0$,令$u=v-a$,这样使$E(u)=0$，这样变换后的方程为$Y=(\beta_0+a)+\beta_1 x+u$使得干扰项的均值为0.</p>
-<p>因为u和x是随机变量，所以我们能在任何给定x下定义u的条件分布，所以关键假设是<strong>u的均值与x无关</strong>。写作:$E(u|x)=E(u)$</p>
-<p>该方程表示：u的均值独立于x，（用均值独立来近似说明u独立于x）结合$E(u)=0$，就得到了零条件均值假定：$E(u|x)=0$.</p>
-<p>零条件均值假定的直观含义：由于误差项的存在，x对y的影响是随机的。但如果零条件均值假定成立，那么无论x取什么值，误差项对y的平均影响为零，从而x对y的均值的影响是确定性的。换言之，我们无法确定x与y的关系，但可以确定x与y的均值之间的关系。</p>
-<h4 id="总体回归函数"><a href="#总体回归函数" class="headerlink" title="总体回归函数"></a>总体回归函数</h4><p>根据零条件均值假定：</p>
-<script type="math/tex; mode=display">E(y|x)=E(\beta_0+\beta_1 x+u|x)</script><script type="math/tex; mode=display">=E(\beta_0|x)+E(\beta_1 x|x)+E(u|x)=\beta_0+\beta_1 x</script><script type="math/tex; mode=display">E(y|x)=\beta_0+\beta_1 x$$被称为总体回归函数。$\triangle E(y|x)=\beta_1$,因此$\beta_1$衡量了x增加一个单位对y的条件均值的影响。
+<h3 id="过原点回归"><a href="#过原点回归" class="headerlink" title="过原点回归"></a>过原点回归</h3><p>在分析问题时，有些情况我们希望x=0时y=0，这时得到的方程$\bar y=\bar \beta_1 x$又被称为<strong>过原点回归</strong>。通过最小化残差平方和的一阶条件，我们可以得到</p>
+<script type="math/tex; mode=display">\bar \beta_1=\frac{\sum_{i=1}^nx_iy_i}{\sum_{i=1}^nx_i^2}$$(分子不为零)
 
-进而推得$y=E(y|x)+u$,该方程把y分成两部分，一部分是$E(y|x)$,被称为y的系统部分，可以由x解释；另一部分u被称为非系统部分，不能被x解释，但它的均值为0。
+同样的，判定系数 $R^2=1-\frac{\sum_{i=1}^n(y_i-\bar \beta_1x_i)^2}{\sum_{i=1}^ny_i^2}$
 
+使用过原点回归需要非常强的前提条件，在实际分析中应用不多。
 
-![](C:\Users\legion\Desktop\新建文件夹\VSCODE\计量经济学\简单回归模型1.PNG)
+### 估计量的性质
 
-### 普通最小二乘法(OLS)
+#### 高斯-马尔科夫假定
 
-#### 矩估计
+定理：对于线性回归模型，在某些约束条件下，由最小二乘法得到的估计量（估计子），即线性回归模型的系数，是最优的线性无偏估计子。
 
-接下来讨论如何估计参数$\beta_0$和$\beta_1$,我们通过矩估计的方法，用样本矩估计总体矩。令{$(x_i,y_i):(i=1,2,\cdots,n)$}表示从总体中抽取容量为n的样本，对每个i，都有
+为了判断点估计的无偏性、有效性等性质，需要对模型做出一些假定
 
-$$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰项。</p>
-<p>根据零条件均值假定，我们知道$E(u)=0$,$Cov(x,u)=0$,所以有 $Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0$</p>
-<p>所以 $E(u)=E(y-\beta_0-\beta_1 x)=0$</p>
-<p>$E(ux)=E[x(y-\beta_0-\beta_1 x)]=0$</p>
-<p>用样本均值代替总体均值，选择估计值$\hat \beta_0$和$\hat \beta_1$来代替$\beta_0$和$\beta_1$，以上两式就可以写成:</p>
-<script type="math/tex; mode=display">\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><script type="math/tex; mode=display">\frac{1}{n}\sum_{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><p>对于等式一，可以改写为 $\hat\beta_0=\bar y-\hat\beta_1 \bar x$</p>
-<p>对于等式二，做进一步的替换：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><script type="math/tex; mode=display">\sum_{i=1}^{n}x_i[y_i-(\bar y-\hat \beta_1 \bar x) -\hat \beta_1 x]=0</script><script type="math/tex; mode=display">\sum_{i=1}^{n}x_i(y_i-\bar y)=\hat \beta_1\sum_{i=1}^{n}x_i(x_i-\bar x)</script><p>根据求和运算的性质，有</p>
-<script type="math/tex; mode=display">\sum_{i-1}^n(x_i-\bar x)^2=\sum_{i=1}^{n}(x_i^2-2x_i\bar x+\bar x^2)</script><script type="math/tex; mode=display">=\sum_{i=1}^n(x_i^2-x_i\bar x)=\sum_{i=1}^{n}x_i(x_i-\bar x)</script><p>同理，$\sum<em>{i-1}^n x_i(y_i-\bar y)=\sum</em>{i=1}^n(x_i-\bar x)(y_i-\bar y)$</p>
-<p>所以只要有$\sum<em>{i-1}^n(x_i-\bar x)^2&gt;0$ 就有$\hat\beta_1=\frac{\sum</em>{i=1}^n(x<em>i-\bar x)(y_i-\bar y)}{\sum</em>{i-1}^n(x_i-\bar x)^2}$</p>
-<p>根据代数知识，$\hat \beta<em>1=\frac{Cov(x,y)}{S_x^2}=\frac{Cov(x,y)}{S_xS_y}\cdot \frac{s_y}{S_x}=\hat r</em>{xy}\cdot \frac{S_y}{S_x}$</p>
-<p>由样本推得总体：$\beta<em>1=r</em>{xy}\cdot\frac{S_y}{S_x}$</p>
-<p>可以看出，若x与y正相关，则斜率为正；若x与y负相关，则斜率为负。但是，简单回归本质上是两个变量之间的相关性分析，所以在推导因果关系时需要非常小心。</p>
-<h4 id="最小化残差平方和"><a href="#最小化残差平方和" class="headerlink" title="最小化残差平方和"></a>最小化残差平方和</h4><p>对任意斜率和截距$\beta_0$和$\beta_1$,定义y在$x=x_i$时的一个拟合值为</p>
-<script type="math/tex; mode=display">\hat y_i=\hat\beta_0+\hat\beta_1 x_i</script><p>这是在给定斜率和截距下，y在$x=x_i$时的预测值。样本中每一次观测都有一个拟合值，第i次观测的残差就是其实际值与拟合值之差：$u_i=y_i-\hat\beta_0-\hat\beta_1 x_i$</p>
-<p>事实上，普通最小二乘法之所以得名，就是因为$\hat\beta_0,\hat\beta_1$这些估计值最小化了残差的平方和：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n}\hat u_i^2=\sum_{i=1}^{n}(y_i-\hat\beta_0-\hat\beta_1 x_i)^2</script><p>其一阶条件恰为</p>
-<p>$\sum<em>{i=1}^{n}(y_i-\hat \beta_0 -\hat \beta_1 x)=0 \sum</em>{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0$</p>
-<p>一旦确定了截距和斜率的估计值，就能够建立OLS回归线：</p>
-<p>$\hat y=\hat \beta_0+\hat \beta_1 x$  从该方程中得到的预测值便是估计值。</p>
-<p>该方程又被称作<strong>样本回归函数</strong>，因为它是总体回归函数<script type="math/tex">E(y|x)=\beta_0+\beta_1 x</script>的一个样本估计。（总体回归函数是唯一且未知的）样本回归函数来自于给定一组数据的样本，所以对于不同的样本，OLS回归线有不同的斜率和截距。</p>
-<p>在大多数情形中，斜率的估计值可以写成：$\hat\beta_1=\triangle\hat y/\triangle x$,它告诉我们x变化一个单位时的$\hat y$的变化量；</p>
-<p>类似的，有$\triangle \hat y=\hat \beta_1\triangle x$,所以在给定x的一个变化，我们都能计算出y的预期变化。</p>
+1.线性于参数：$y=\beta_0+\beta_1x+u$
+
+2.随机抽样：从总体中随机抽取样本，样本容量为n。同时，可以把随机样本的形式将方程写为：$y_i=\beta_0+\beta_1x_i+u_i$,其中$u_i$是第i次观测时的误差或干扰。
+
+3.解释变量的样本有波动：即$x_i$的标准差不为零。
+
+4.零条件均值假定：对给定任何x值，误差的期望都为零：$E(u|x)=0$
+
+#### OLS估计量的无偏性
+
+基于以上四个假定，可以证明出OLS估计量的无偏性：
+
+首先，我们把$\beta_1$的估计量改写为$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)y_i}{\sum_{i=1}^n(x_i-\bar x)^2}$
+
+将随驾抽样形式的方程代入：(定义$SST_X=\sum_{i=1}^n(x_i-\bar x)^2$)
+
+$$\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\frac{\beta_0\sum_{i=1}^n(x_I-\bar x)+\beta_1\sum_{i=1}^n(x_i-\bar x)x_i+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}=\frac{\beta_1SST_x+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}</script><p>进一步整理，得到$\hat \beta<em>1=\beta_1+(1/SST_x)\sum</em>{i=1}^nd_iu_i$  其中($d_i=x_i-\bar x$)</p>
+<p>得到上式，就可证明出OLS的无偏性：</p>
+<p><strong>定理：</strong>基于假定1-4，对任意$\beta_1$和$\beta_0$都有 $E(\hat \beta_0)=\beta_0$,$E(\hat \beta_1)=\beta_1$。</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+\mathrm{E}\left(\hat{\beta}_{1}\right)=\beta_{1}+\mathrm{E}\left[\left(1 / \mathrm{SST}_{x}\right) \sum_{i=1}^{n} d_{i} u_{i}\right]=\beta_{1}+\left(1 / \mathrm{SST}_{x}\right) \sum_{i=1}^{n} \mathrm{E}\left(d_{i} u_{i}\right) \\
+=\beta_{1}+\left(1 / \mathrm{SST}_{x}\right) \sum_{i=1}^{n} d_{i} \mathrm{E}\left(u_{i}\right)=\beta_{1}+\left(1 / \mathrm{SST}_{x}\right) \sum_{i=1}^{n} d_{i} \cdot 0=\beta_{1}
+\end{array}</script><script type="math/tex; mode=display">
+\begin{aligned}
+&\hat{\beta}_{0}=\bar{y}-\hat{\beta}_{1} \bar{x}=\beta_{0}+\beta_{1} \bar{x}+\bar{u}-\hat{\beta}_{1} \bar{x}=\beta_{0}+\left(\beta_{1}-\hat{\beta}_{1}\right) x+u\\
+&\text { 据假定} 2 \text { 和 } 4, \text { 有 } \mathrm{E}(\bar{u})=0, \text { 于是以 } x_{i} \text { 的值为条 }\\
+&\mathrm{E}\left(\hat{\beta}_{0}\right)=\beta_{0}+\mathrm{E}\left[\left(\beta_{1}-\hat{\beta}_{1}\right) \bar{x}\right]+\mathrm{E}(\bar{u})=\beta_{0}+\mathrm{E}\left[\left(\beta_{1}-\hat{\beta}_{1}\right)\right] \bar{x}=\beta_1
+\end{aligned}</script><p>证毕。</p>
+<h4 id="OLS估计量的方差"><a href="#OLS估计量的方差" class="headerlink" title="OLS估计量的方差"></a>OLS估计量的方差</h4><p>结果表明，在假定1至4下，OLS估计量的方差可以计算出来。不过，这些表达式多少有些复杂。有鉴于此，我们增加一个在横截面分析中的传统假定。这个假定要求，以x为条件，无法观测变量u的方差是一一个常数。这就是同方差(homoskedasticity) 或“常方差”假定。</p>
+<p>假定5（同方差性）：对任意x，误差都具有相同的方差，即$Var(u|x)=\sigma^2$（误差方差）</p>
+<p><img src="/.com//Blog\source\_posts\简单回归模型（二）\同方差性.PNG" alt="同方差下的简单回归分析"></p>
+<p>相反的，当$Var(u|x)$取决于x时，便称误差项表现为<strong>异方差性</strong>。由于$Var(u|x)=Var(y|x)$,所以只要$Var(y|x)$是x的函数，便表现出异方差性。</p>
+<p><img src="/.com//Blog\source\_posts\简单回归模型（二）\异方差性.PNG" alt="异方差性下的简单回归分析"></p>
+<p><strong>定理：OLS估计量的抽样方差</strong></p>
+<p>在假定1-5下，我们有</p>
+<p>$Var(\hat \beta<em>1)=\sigma^2/SST_x$ 和 $Var(\hat \beta_0)=\frac{\sigma^2n^{-1}\sum</em>{i=1}^nx<em>i^2}{\sum</em>{i=1}^n(x_i-\bar x)^2}$</p>
+<p>证明：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\operatorname{Var}\left(\hat{\beta}_{1}\right) &=\left(1 / \operatorname{SST}_{x}\right)^{2} \operatorname{Var}\left(\sum_{i=1}^{n} d_{i} u_{i}\right)=\left(1 / \mathrm{SST}_{x}\right)^{2}\left(\sum_{i=1}^{\infty} d^{\prime} \operatorname{Var}\left(u_{i}\right)\right) \\
+&=\left(1 / \mathrm{SST}_{x}\right)^{2}\left(\sum_{i=1}^{n} d_{i}^{2} \sigma^{2}\right)\left[\text { 因为 } \operatorname{Var}\left(u_{i}\right)=\sigma^{2}, \forall i\right] \\
+&=\sigma^{2}\left(1 / \mathrm{SST}_{x}\right)^{2}\left(\sum_{i=1}^{n} d_{i}^{2}\right)=\sigma^{2}\left(1 / \mathrm{SST}_{x}\right)^{2} \mathrm{SST},=\sigma / \mathrm{SST}_{x}
+\end{aligned}</script><p>（$Var(\hat \beta_0)$同理）</p>
+<p>证毕</p>
+<p>我们可以看出，误差方差越大，$Var(\hat \beta_1)$就越大：影响y的不可观测因素波动越大，要准确估计$\beta_1$也就越难；自变量波动越大，$Var(\hat \beta_1)$也就越小，x的样本越分散，越容易估计出$\beta_1$，因此，较大的样本容量会使$\hat \beta_1$的方差越小。</p>
+<h4 id="误差方差的估计"><a href="#误差方差的估计" class="headerlink" title="误差方差的估计"></a>误差方差的估计</h4><p><strong>待更</strong></p>
+<hr>
 
     </div>
 
@@ -328,7 +378,7 @@ $$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰�
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" title="简单回归模型">http://example.com/2021/03/12/简单回归模型/</a>
+    <a href="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" title="简单回归模型（二）">http://example.com/2021/03/19/简单回归模型（二）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -348,13 +398,10 @@ $$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/10/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2021/03/19/title/" rel="prev" title="title">
+      <i class="fa fa-chevron-left"></i> title
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/19/title/" rel="next" title="title">
-      title <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -414,7 +461,7 @@ $$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%80%BC%E5%81%87%E5%AE%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">零条件均值假定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">总体回归函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E6%AE%8B%E5%B7%AE%E5%B9%B3%E6%96%B9%E5%92%8C"><span class="nav-number">1.1.3.</span> <span class="nav-text">最小化残差平方和</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="nav-number">1.1.</span> <span class="nav-text">拟合优度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E5%8D%95%E4%BD%8D%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">度量单位与函数形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E5%8E%9F%E7%82%B9%E5%9B%9E%E5%BD%92"><span class="nav-number">1.3.</span> <span class="nav-text">过原点回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">OLS估计量的方差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="nav-number">1.3.2.</span> <span class="nav-text">误差方差的估计</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
