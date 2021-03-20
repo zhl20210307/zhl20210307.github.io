@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Myblog">
 <meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
-<meta property="og:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/异方差性.PNG">
+<meta property="og:image" content="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
+<meta property="og:image" content="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/Blog/source/_posts/简单回归模型（二）/异方差性.PNG">
 <meta property="article:published_time" content="2021-03-19T10:05:06.000Z">
-<meta property="article:modified_time" content="2021-03-20T15:14:33.002Z">
+<meta property="article:modified_time" content="2021-03-20T15:33:11.635Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/.com//Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
+<meta name="twitter:image" content="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/Blog/source/_posts/简单回归模型（二）/同方差性.PNG">
 
 <link rel="canonical" href="http://example.com/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-20 23:14:33" itemprop="dateModified" datetime="2021-03-20T23:14:33+08:00">2021-03-20</time>
+                <time title="修改时间：2021-03-20 23:33:11" itemprop="dateModified" datetime="2021-03-20T23:33:11+08:00">2021-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -329,9 +329,9 @@
 \end{aligned}</script><p>证毕。</p>
 <h4 id="OLS估计量的方差"><a href="#OLS估计量的方差" class="headerlink" title="OLS估计量的方差"></a>OLS估计量的方差</h4><p>结果表明，在假定1至4下，OLS估计量的方差可以计算出来。不过，这些表达式多少有些复杂。有鉴于此，我们增加一个在横截面分析中的传统假定。这个假定要求，以x为条件，无法观测变量u的方差是一一个常数。这就是同方差(homoskedasticity) 或“常方差”假定。</p>
 <p>假定5（同方差性）：对任意x，误差都具有相同的方差，即$Var(u|x)=\sigma^2$（误差方差）</p>
-<p><img src="/.com//Blog\source\_posts\简单回归模型（二）\同方差性.PNG" alt="同方差下的简单回归分析"></p>
+<p><img src="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/Blog\source\_posts\简单回归模型（二）\同方差性.PNG" alt="同方差下的简单回归分析"></p>
 <p>相反的，当$Var(u|x)$取决于x时，便称误差项表现为<strong>异方差性</strong>。由于$Var(u|x)=Var(y|x)$,所以只要$Var(y|x)$是x的函数，便表现出异方差性。</p>
-<p><img src="/.com//Blog\source\_posts\简单回归模型（二）\异方差性.PNG" alt="异方差性下的简单回归分析"></p>
+<p><img src="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/Blog\source\_posts\简单回归模型（二）\异方差性.PNG" alt="异方差性下的简单回归分析"></p>
 <p><strong>定理：OLS估计量的抽样方差</strong></p>
 <p>在假定1-5下，我们有</p>
 <script type="math/tex; mode=display">Var(\hat \beta_1)=\sigma^2/SST_x</script><script type="math/tex; mode=display">Var(\hat \beta_0)=\frac{\sigma^2n^{-1}\sum_{i=1}^nx_i^2}{\sum_{i=1}^n(x_i-\bar x)^2}</script><p>证明：</p>
