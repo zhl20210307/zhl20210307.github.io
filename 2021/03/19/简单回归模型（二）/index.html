@@ -312,7 +312,7 @@
 <p>4.零条件均值假定：对给定任何x值，误差的期望都为零：$E(u|x)=0$</p>
 <h4 id="OLS估计量的无偏性"><a href="#OLS估计量的无偏性" class="headerlink" title="OLS估计量的无偏性"></a>OLS估计量的无偏性</h4><p>基于以上四个假定，可以证明出OLS估计量的无偏性：</p>
 <p>首先，我们把$\beta_1$的估计量改写为</p>
-<script type="math/tex; mode=display">\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)y_i}{\sum_{i=1}^n(x_i-\bar x)^2}</script><p>将随驾抽样形式的方程代入：其中 $SST<em>X=\sum</em>{i=1}^n(x_i-\bar x)^2$</p>
+<script type="math/tex; mode=display">\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)y_i}{\sum_{i=1}^n(x_i-\bar x)^2}</script><p>将随驾抽样形式的方程代入：其中 $SST_X=\sum_{i=1}^n(x_i-\bar x)^2$</p>
 <script type="math/tex; mode=display">\hat \beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(\beta_0+\beta_1x_i+u_i)}{SST_x}=\frac{\beta_0\sum_{i=1}^n(x_I-\bar x)+\beta_1\sum_{i=1}^n(x_i-\bar x)x_i+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}=\frac{\beta_1SST_x+\sum_{i=1}^n(x_i-\bar x)u_i}{SST_x}</script><p>进一步整理，得到 </p>
 <script type="math/tex; mode=display">\hat \beta_1=\beta_1+(1/SST_x)\sum_{i=1}^n d_i u_i</script><p>其中 $d_i=x_i-\bar x$</p>
 <p>得到上式，就可证明出OLS的无偏性：</p>

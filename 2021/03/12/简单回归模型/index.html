@@ -27,11 +27,13 @@
 <meta property="og:site_name" content="Myblog">
 <meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/Users/legion/Desktop/新建文件夹/VSCODE/计量经济学/简单回归模型1.PNG">
 <meta property="article:published_time" content="2021-03-12T00:10:29.038Z">
-<meta property="article:modified_time" content="2021-03-19T12:29:40.203Z">
+<meta property="article:modified_time" content="2021-03-26T10:36:30.162Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/Users/legion/Desktop/新建文件夹/VSCODE/计量经济学/简单回归模型1.PNG">
 
 <link rel="canonical" href="http://example.com/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
 
@@ -203,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-19 20:29:40" itemprop="dateModified" datetime="2021-03-19T20:29:40+08:00">2021-03-19</time>
+                <time title="修改时间：2021-03-26 18:36:30" itemprop="dateModified" datetime="2021-03-26T18:36:30+08:00">2021-03-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,20 +279,11 @@
 <p>该方程表示：u的均值独立于x，（用均值独立来近似说明u独立于x）结合$E(u)=0$，就得到了零条件均值假定：$E(u|x)=0$.</p>
 <p>零条件均值假定的直观含义：由于误差项的存在，x对y的影响是随机的。但如果零条件均值假定成立，那么无论x取什么值，误差项对y的平均影响为零，从而x对y的均值的影响是确定性的。换言之，我们无法确定x与y的关系，但可以确定x与y的均值之间的关系。</p>
 <h4 id="总体回归函数"><a href="#总体回归函数" class="headerlink" title="总体回归函数"></a>总体回归函数</h4><p>根据零条件均值假定：</p>
-<script type="math/tex; mode=display">E(y|x)=E(\beta_0+\beta_1 x+u|x)</script><script type="math/tex; mode=display">=E(\beta_0|x)+E(\beta_1 x|x)+E(u|x)=\beta_0+\beta_1 x</script><script type="math/tex; mode=display">E(y|x)=\beta_0+\beta_1 x$$被称为总体回归函数。$\triangle E(y|x)=\beta_1$,因此$\beta_1$衡量了x增加一个单位对y的条件均值的影响。
-
-进而推得$y=E(y|x)+u$,该方程把y分成两部分，一部分是$E(y|x)$,被称为y的系统部分，可以由x解释；另一部分u被称为非系统部分，不能被x解释，但它的均值为0。
-
-
-![](C:\Users\legion\Desktop\新建文件夹\VSCODE\计量经济学\简单回归模型1.PNG)
-
-### 普通最小二乘法(OLS)
-
-#### 矩估计
-
-接下来讨论如何估计参数$\beta_0$和$\beta_1$,我们通过矩估计的方法，用样本矩估计总体矩。令{$(x_i,y_i):(i=1,2,\cdots,n)$}表示从总体中抽取容量为n的样本，对每个i，都有
-
-$$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰项。</p>
+<script type="math/tex; mode=display">E(y|x)=E(\beta_0+\beta_1 x+u|x)</script><script type="math/tex; mode=display">=E(\beta_0|x)+E(\beta_1 x|x)+E(u|x)=\beta_0+\beta_1 x</script><script type="math/tex; mode=display">E(y|x)=\beta_0+\beta_1 x</script><p>被称为总体回归函数。$\triangle E(y|x)=\beta_1$,因此$\beta_1$衡量了x增加一个单位对y的条件均值的影响。</p>
+<p>进而推得$y=E(y|x)+u$,该方程把y分成两部分，一部分是$E(y|x)$,被称为y的系统部分，可以由x解释；另一部分u被称为非系统部分，不能被x解释，但它的均值为0。</p>
+<p><img src="/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/Users\legion\Desktop\新建文件夹\VSCODE\计量经济学\简单回归模型1.PNG" alt></p>
+<h3 id="普通最小二乘法-OLS"><a href="#普通最小二乘法-OLS" class="headerlink" title="普通最小二乘法(OLS)"></a>普通最小二乘法(OLS)</h3><h4 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h4><p>接下来讨论如何估计参数$\beta_0$和$\beta_1$,我们通过矩估计的方法，用样本矩估计总体矩。令{$(x_i,y_i):(i=1,2,\cdots,n)$}表示从总体中抽取容量为n的样本，对每个i，都有</p>
+<script type="math/tex; mode=display">y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰项。</p>
 <p>根据零条件均值假定，我们知道$E(u)=0$,$Cov(x,u)=0$,所以有 $Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0$</p>
 <p>所以 $E(u)=E(y-\beta_0-\beta_1 x)=0$</p>
 <p>$E(ux)=E[x(y-\beta_0-\beta_1 x)]=0$</p>
@@ -298,16 +291,16 @@ $$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰�
 <script type="math/tex; mode=display">\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><script type="math/tex; mode=display">\frac{1}{n}\sum_{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><p>对于等式一，可以改写为 $\hat\beta_0=\bar y-\hat\beta_1 \bar x$</p>
 <p>对于等式二，做进一步的替换：</p>
 <script type="math/tex; mode=display">\sum_{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0</script><script type="math/tex; mode=display">\sum_{i=1}^{n}x_i[y_i-(\bar y-\hat \beta_1 \bar x) -\hat \beta_1 x]=0</script><script type="math/tex; mode=display">\sum_{i=1}^{n}x_i(y_i-\bar y)=\hat \beta_1\sum_{i=1}^{n}x_i(x_i-\bar x)</script><p>根据求和运算的性质，有</p>
-<script type="math/tex; mode=display">\sum_{i-1}^n(x_i-\bar x)^2=\sum_{i=1}^{n}(x_i^2-2x_i\bar x+\bar x^2)</script><script type="math/tex; mode=display">=\sum_{i=1}^n(x_i^2-x_i\bar x)=\sum_{i=1}^{n}x_i(x_i-\bar x)</script><p>同理，$\sum<em>{i-1}^n x_i(y_i-\bar y)=\sum</em>{i=1}^n(x_i-\bar x)(y_i-\bar y)$</p>
-<p>所以只要有$\sum<em>{i-1}^n(x_i-\bar x)^2&gt;0$ 就有$\hat\beta_1=\frac{\sum</em>{i=1}^n(x<em>i-\bar x)(y_i-\bar y)}{\sum</em>{i-1}^n(x_i-\bar x)^2}$</p>
-<p>根据代数知识，$\hat \beta<em>1=\frac{Cov(x,y)}{S_x^2}=\frac{Cov(x,y)}{S_xS_y}\cdot \frac{s_y}{S_x}=\hat r</em>{xy}\cdot \frac{S_y}{S_x}$</p>
-<p>由样本推得总体：$\beta<em>1=r</em>{xy}\cdot\frac{S_y}{S_x}$</p>
+<script type="math/tex; mode=display">\sum_{i-1}^n(x_i-\bar x)^2=\sum_{i=1}^{n}(x_i^2-2x_i\bar x+\bar x^2)</script><script type="math/tex; mode=display">=\sum_{i=1}^n(x_i^2-x_i\bar x)=\sum_{i=1}^{n}x_i(x_i-\bar x)</script><p>同理，$\sum_{i-1}^n x_i(y_i-\bar y)=\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y)$</p>
+<p>所以只要有$\sum_{i-1}^n(x_i-\bar x)^2&gt;0$ 就有$\hat\beta_1=\frac{\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y)}{\sum_{i-1}^n(x_i-\bar x)^2}$</p>
+<p>根据代数知识，$\hat \beta_1=\frac{Cov(x,y)}{S_x^2}=\frac{Cov(x,y)}{S_xS_y}\cdot \frac{s_y}{S_x}=\hat r_{xy}\cdot \frac{S_y}{S_x}$</p>
+<p>由样本推得总体：$\beta_1=r_{xy}\cdot\frac{S_y}{S_x}$</p>
 <p>可以看出，若x与y正相关，则斜率为正；若x与y负相关，则斜率为负。但是，简单回归本质上是两个变量之间的相关性分析，所以在推导因果关系时需要非常小心。</p>
 <h4 id="最小化残差平方和"><a href="#最小化残差平方和" class="headerlink" title="最小化残差平方和"></a>最小化残差平方和</h4><p>对任意斜率和截距$\beta_0$和$\beta_1$,定义y在$x=x_i$时的一个拟合值为</p>
 <script type="math/tex; mode=display">\hat y_i=\hat\beta_0+\hat\beta_1 x_i</script><p>这是在给定斜率和截距下，y在$x=x_i$时的预测值。样本中每一次观测都有一个拟合值，第i次观测的残差就是其实际值与拟合值之差：$u_i=y_i-\hat\beta_0-\hat\beta_1 x_i$</p>
 <p>事实上，普通最小二乘法之所以得名，就是因为$\hat\beta_0,\hat\beta_1$这些估计值最小化了残差的平方和：</p>
 <script type="math/tex; mode=display">\sum_{i=1}^{n}\hat u_i^2=\sum_{i=1}^{n}(y_i-\hat\beta_0-\hat\beta_1 x_i)^2</script><p>其一阶条件恰为</p>
-<p>$\sum<em>{i=1}^{n}(y_i-\hat \beta_0 -\hat \beta_1 x)=0 \sum</em>{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0$</p>
+<p>$\sum_{i=1}^{n}(y_i-\hat \beta_0 -\hat \beta_1 x)=0 \sum_{i=1}^{n}x_i(y_i-\hat \beta_0 -\hat \beta_1 x)=0$</p>
 <p>一旦确定了截距和斜率的估计值，就能够建立OLS回归线：</p>
 <p>$\hat y=\hat \beta_0+\hat \beta_1 x$  从该方程中得到的预测值便是估计值。</p>
 <p>该方程又被称作<strong>样本回归函数</strong>，因为它是总体回归函数<script type="math/tex">E(y|x)=\beta_0+\beta_1 x</script>的一个样本估计。（总体回归函数是唯一且未知的）样本回归函数来自于给定一组数据的样本，所以对于不同的样本，OLS回归线有不同的斜率和截距。</p>
@@ -414,7 +407,7 @@ $$y_i=\beta_0+\beta_1 x_i +u_i</script><p>其中$u_i$为第i次观测的干扰�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%80%BC%E5%81%87%E5%AE%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">零条件均值假定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">总体回归函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E6%AE%8B%E5%B7%AE%E5%B9%B3%E6%96%B9%E5%92%8C"><span class="nav-number">1.1.3.</span> <span class="nav-text">最小化残差平方和</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">简单回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%80%BC%E5%81%87%E5%AE%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">零条件均值假定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">总体回归函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95-OLS"><span class="nav-number">1.2.</span> <span class="nav-text">普通最小二乘法(OLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E4%BC%B0%E8%AE%A1"><span class="nav-number">1.2.1.</span> <span class="nav-text">矩估计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96%E6%AE%8B%E5%B7%AE%E5%B9%B3%E6%96%B9%E5%92%8C"><span class="nav-number">1.2.2.</span> <span class="nav-text">最小化残差平方和</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
