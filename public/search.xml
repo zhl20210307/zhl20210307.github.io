@@ -5,6 +5,31 @@
     
     <entry>
       <title>简单回归模型（二）</title>
+      <link href="2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+      <url>2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</url>
+      
+        <content type="html"><![CDATA[<p>对多元线性回归进行初步整理</p><span id="more"></span><h2 id="多元回归模型"><a href="#多元回归模型" class="headerlink" title="多元回归模型"></a>多元回归模型</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>多元线性回归模型：</p><script type="math/tex; mode=display">Y=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k+u</script><p>简单回归模型难以做到保持其他相关条件不变，如果影响因变量的因素不止一个，就需要用到多元回归模型。</p><p><strong>零条件均值假定</strong>：$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$</p><p>总体回归函数为：$E(Y|X_1,\cdots,X_k)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k$</p><p>其中$X_1$增加$\triangle X_1$的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1\triangle X_1$</p><p>$X_1$增加一个单位的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1$</p><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p><h3 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h3><h4 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h4><p><strong>样本回归函数</strong>：$\hat Y=\hat \beta_0+\hat \beta_1X_1+\hat \beta_2X_2+\cdot+\hat \beta_kX_k+\hat u$</p><p><strong>OLS估计方法</strong>：找到一组{$\beta_1,\cdots,\beta_k$},使得残差的平方和最小；</p><script type="math/tex; mode=display">min Q=\sum_{i=1}^n{\hat u_i}^2=\sum_{i=1}^n(Y_i-\hat Y_I)^2</script><h4 id="拟合优度"><a href="#拟合优度" class="headerlink" title="拟合优度"></a>拟合优度</h4><h3 id="估计量的性质"><a href="#估计量的性质" class="headerlink" title="估计量的性质"></a>估计量的性质</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计量经济学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简单回归模型（二）</title>
       <link href="2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
       <url>2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
       
