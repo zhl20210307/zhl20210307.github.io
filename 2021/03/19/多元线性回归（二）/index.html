@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="Vala morghulis">
+  <meta name="description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。 &lt;&#x2F;—more—&gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="title">
-<meta property="og:url" content="http://example.com/2021/03/19/title/index.html">
+<meta property="og:title" content="OLS回归（二）">
+<meta property="og:url" content="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="Vala morghulis">
+<meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。 &lt;&#x2F;—more—&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-19T10:04:44.000Z">
-<meta property="article:modified_time" content="2021-03-19T10:04:44.950Z">
+<meta property="article:modified_time" content="2021-05-06T13:17:49.314Z">
 <meta property="article:author" content="惧怕滴空梦">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/03/19/title/">
+<link rel="canonical" href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>title | Myblog</title>
+  <title>OLS回归（二） | Myblog</title>
   
 
 
@@ -200,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/19/title/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -213,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          title
+          OLS回归（二）
         </h1>
 
         <div class="post-meta">
@@ -224,6 +225,22 @@
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2021-03-19 18:04:44" itemprop="dateCreated datePublished" datetime="2021-03-19T18:04:44+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-06 21:17:49" itemprop="dateModified" datetime="2021-05-06T21:17:49+08:00">2021-05-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计量经济学</span></a>
+                </span>
             </span>
 
           
@@ -242,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/03/19/title/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/19/title/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -258,7 +275,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p>
+<p>&lt;/—more—&gt;</p>
+
     </div>
 
     
@@ -273,7 +292,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/03/19/title/" title>http://example.com/2021/03/19/title/</a>
+    <a href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/" title="OLS回归（二）">http://example.com/2021/03/19/多元线性回归（二）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -283,6 +302,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+          </div>
 
         
 
@@ -294,8 +316,8 @@
       <i class="fa fa-chevron-left"></i> 简单回归模型
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="next" title="多元回归模型（一）">
-      多元回归模型（一） <i class="fa fa-chevron-right"></i>
+    <a href="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="next" title="简单回归模型（二）">
+      简单回归模型（二） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -497,6 +519,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
