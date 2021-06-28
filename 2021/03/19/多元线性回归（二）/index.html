@@ -28,7 +28,7 @@
 <meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-19T10:04:44.000Z">
-<meta property="article:modified_time" content="2021-05-06T13:20:09.964Z">
+<meta property="article:modified_time" content="2021-05-17T12:25:24.359Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-06 21:20:09" itemprop="dateModified" datetime="2021-05-06T21:20:09+08:00">2021-05-06</time>
+                <time title="修改时间：2021-05-17 20:25:24" itemprop="dateModified" datetime="2021-05-17T20:25:24+08:00">2021-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,20 @@
       
         <p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p>
 <span id="more"></span>
-
+<p>为什么要做多元回归分析？</p>
+<ul>
+<li><p>简单回归分析难以做到保持其它相关条件不变；</p>
+</li>
+<li><p>存在多个自变量时，估计是有偏的。</p>
+</li>
+</ul>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
+<li><p>关键假定：零条件均值假定：</p>
+<p>假定$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$,那么总体回归函数为：</p>
+<script type="math/tex; mode=display">E(Y|X_1,X_2,\cdots,X_K)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k</script><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p>
+<h1 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h1></li>
+</ul>
+<h2 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h2><h2 id="OLS拟合优度"><a href="#OLS拟合优度" class="headerlink" title="OLS拟合优度"></a>OLS拟合优度</h2>
     </div>
 
     
@@ -378,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">OLS估计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">OLS估计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">OLS拟合优度</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -393,7 +407,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

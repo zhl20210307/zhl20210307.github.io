@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>高斯——马尔可夫假定</title>
+      <link href="2021/05/17/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%81%87%E5%AE%9A/"/>
+      <url>2021/05/17/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%81%87%E5%AE%9A/</url>
+      
+        <content type="html"><![CDATA[<p>简单回归分析中有一个很大的缺陷就是很难得到在其他条件不变时x对y的影响，因为此时零条件均值假定往往并不成立。这时我们需要用到更加准确的回归方法——多元线性回归<br><!---more---></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计量经济学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>多元回归模型（一）</title>
       <link href="2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
       <url>2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</url>
       
-        <content type="html"><![CDATA[<p>对多元线性回归进行初步整理</p><span id="more"></span><h2 id="多元回归模型"><a href="#多元回归模型" class="headerlink" title="多元回归模型"></a>多元回归模型</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>多元线性回归模型：</p><script type="math/tex; mode=display">Y=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k+u</script><p>简单回归模型难以做到保持其他相关条件不变，如果影响因变量的因素不止一个，就需要用到多元回归模型。</p><p><strong>零条件均值假定</strong>：$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$</p><p>总体回归函数为：$E(Y|X_1,\cdots,X_k)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k$</p><p>其中$X_1$增加$\triangle X_1$的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1\triangle X_1$</p><p>$X_1$增加一个单位的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1$</p><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p><h3 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h3><h4 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h4><p><strong>样本回归函数</strong>：$\hat Y=\hat \beta_0+\hat \beta_1X_1+\hat \beta_2X_2+\cdot+\hat \beta_kX_k+\hat u$</p><p><strong>OLS估计方法</strong>：找到一组{$\beta_1,\cdots,\beta_k$},使得残差的平方和最小；</p><script type="math/tex; mode=display">min Q=\sum_{i=1}^n{\hat u_i}^2=\sum_{i=1}^n(Y_i-\hat Y_I)^2</script><p>通过一阶条件为零，我们可以得到针对$k+1$个未知数的$k+1$的方程，解出$\hat\beta_0$、$\hat\beta_1$、$\cdots$、$\hat\beta_k$.</p><h4 id="拟合优度"><a href="#拟合优度" class="headerlink" title="拟合优度"></a>拟合优度</h4><h3 id="估计量的性质"><a href="#估计量的性质" class="headerlink" title="估计量的性质"></a>估计量的性质</h3>]]></content>
+        <content type="html"><![CDATA[<p>对多元线性回归进行初步整理</p><span id="more"></span><h2 id="多元回归模型"><a href="#多元回归模型" class="headerlink" title="多元回归模型"></a>多元回归模型</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>多元线性回归模型：</p><script type="math/tex; mode=display">Y=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k+u</script><p>简单回归模型难以做到保持其他相关条件不变，如果影响因变量的因素不止一个，就需要用到多元回归模型。</p><p><strong>零条件均值假定</strong>：$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$</p><p>总体回归函数为：$E(Y|X_1,\cdots,X_k)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k$</p><p>其中$X_1$增加$\triangle X_1$的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1\triangle X_1$</p><p>$X_1$增加一个单位的影响为：$\triangle E(Y|X_2,\cdots,X_k)=\beta_1$</p><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p><h3 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h3><h4 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h4><p><strong>样本回归函数</strong>：$\hat Y=\hat \beta_0+\hat \beta_1X_1+\hat \beta_2X_2+\cdot+\hat \beta_kX_k+\hat u$</p><p><strong>OLS估计方法</strong>：找到一组{$\beta_1,\cdots,\beta_k$},使得残差的平方和最小；</p><script type="math/tex; mode=display">min Q=\sum_{i=1}^n{\hat u_i}^2=\sum_{i=1}^n(Y_i-\hat Y_i)^2</script><p>通过一阶条件为零，我们可以得到针对$k+1$个未知数的$k+1$的方程，解出$\hat\beta_0$、$\hat\beta_1$、$\cdots$、$\hat\beta_k$.</p><h4 id="拟合优度"><a href="#拟合优度" class="headerlink" title="拟合优度"></a>拟合优度</h4><p>跟简单回归模型一样，我们用拟合优度来衡量x究竟多好的结识了y。回归的$R^2$被定义为：</p><script type="math/tex; mode=display">R^2=\frac{SSE}{SST}=1-\frac{SSR}{SST}</script><p>SSR总是小于SST，因此$R^2$总是介于0和1之间。可以证明，$R^2$于$r^2$在数值上是相等的（这里只用简单回归的拟合优度作为例子，多元回归的拟合优度同理）：</p><script type="math/tex; mode=display">R^2=\frac{SSE}{SST}=\frac{\sum_{i=1}^n(\hat{y_i}-\bar y)^2}{\sum_{i=1}^n (y_i-\bar y)^2}=\frac{\sum_{i=1}^n(\hat \beta_1 x_i-\hat \beta_1 \bar x)^2}{\sum_{i=1}^n(y_i-\bar y)^2}=\hat \beta_1\frac{S_x^2}{S_y^2}=\frac{S_{xy}^2S_x^2}{S_x^4S_y^2}=(\frac{S_{xy}}{S_xS_y})^2=r^2</script><h4 id="估计量的无偏性"><a href="#估计量的无偏性" class="headerlink" title="估计量的无偏性"></a>估计量的无偏性</h4><p>为了证明OLS估计量的无偏性，我们需要如下假定：</p><ul><li><p>MLR1（线性于参数）：总体模型是参数的线性函数；</p></li><li><p>MLR2（随机抽样）：从总体中随机抽取样本容量为n的样本</p></li><li><p>MLR3（不完全共线性）：自变量不为常数且不是其他自变量的线性组合；</p></li><li><p>MLR4（零条件均值假定）：$E(u|x_i,x_2,\cdots,x_n)=0$</p></li></ul><p><strong>定理一：在假定MLR1-MLR4下，对$\forall j=0,1,\cdots,k ,\textbf{都有} E(\hat \beta_j)=\beta_j$，即OLS估计量是总体参数的无偏估计量</strong></p><h4 id="估计量的方差"><a href="#估计量的方差" class="headerlink" title="估计量的方差"></a>估计量的方差</h4><p>为了求出估计的方差我们还需要假定：</p><ul><li>MLR5（同方差性）：$Var(u|x_1,\cdots,x_k)=\sigma^2$</li></ul><p><strong>定理二（高斯—马尔可夫定理）t\beta_j$是$\beta_j$的无偏估计量（BLUES)</strong></p><p>根据MLR5,可以求得方差的五篇估计为$Var(\hat\beta_j)=\frac{\sigma^2}{SST_J(1-R_j^2)}$</p><h3 id="遗漏变量的偏误"><a href="#遗漏变量的偏误" class="headerlink" title="遗漏变量的偏误"></a>遗漏变量的偏误</h3><p>原模型：$\hat y=\hat\beta_0+\hat \beta x_1+\hat\beta_2x_2$</p><p>遗漏$x_2$后：$\tilde y=\tilde \beta_0+\tilde \beta_1x_1$</p><p>$\tilde\beta_1=\hat\beta_1+\hat\beta_2\tilde\delta_1$,$\delta_1=\frac{Cov(x_1,x_2)}{\sigma_1^2}$</p><p>如果原模型满足MLR1-MLR4,那么$E(\tilde\beta_1)=E(\hat\beta_1+\hat\beta_2\tilde\delta_1)=E(\hat\beta_1)+E(\hat\beta_2)\tilde\delta_1$</p><p>所以有$Bias(\tilde\beta_1)=E(\tilde\beta_1)-\beta_1=\beta_2\tilde\delta_1$</p><div class="table-container"><table><thead><tr><th></th><th>$Cov(x_1,x_2)&gt;0$</th><th>$Cov(x_1,x_2)&gt;0$</th></tr></thead><tbody><tr><td>$\beta_2&gt;0$</td><td>偏误为正</td><td>偏误为负</td></tr><tr><td>$\beta_2&lt;0$</td><td>偏误为负</td><td>偏误为正</td></tr></tbody></table></div><h3 id="模型中包含无关变量"><a href="#模型中包含无关变量" class="headerlink" title="模型中包含无关变量"></a>模型中包含无关变量</h3><p>$E(y|x_1,x_2,x_3)=E(y|x_1,x_2)=\beta_0+\beta_1x_1+\beta_2x_2$</p><p>可以看到均值并不会有什么影响，根据OLS无偏性可知$E(\hat \beta_3)=\beta_3=0$</p><p>但无关变量会对估计量的方差有影响，它会加剧多重共线性使估计量的方差变大。</p>]]></content>
       
       
       <categories>
@@ -58,7 +83,7 @@
       <link href="2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
       <url>2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p><span id="more"></span>]]></content>
+        <content type="html"><![CDATA[<p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p><span id="more"></span><p>为什么要做多元回归分析？</p><ul><li><p>简单回归分析难以做到保持其它相关条件不变；</p></li><li><p>存在多个自变量时，估计是有偏的。</p></li></ul><h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul><li><p>关键假定：零条件均值假定：</p><p>假定$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$,那么总体回归函数为：</p><script type="math/tex; mode=display">E(Y|X_1,X_2,\cdots,X_K)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k</script><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p><h1 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h1></li></ul><h2 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h2><h2 id="OLS拟合优度"><a href="#OLS拟合优度" class="headerlink" title="OLS拟合优度"></a>OLS拟合优度</h2>]]></content>
       
       
       <categories>
