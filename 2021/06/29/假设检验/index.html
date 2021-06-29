@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
+  <meta name="description" content="为了确定我们的多元回归模型是否显著，需要用到假设检验来对模型进行推断。常用的假设检验有t检验、F检验和LM检验等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OLS回归（二）">
-<meta property="og:url" content="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:title" content="Myblog">
+<meta property="og:url" content="http://example.com/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。">
+<meta property="og:description" content="为了确定我们的多元回归模型是否显著，需要用到假设检验来对模型进行推断。常用的假设检验有t检验、F检验和LM检验等。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-19T10:04:44.000Z">
-<meta property="article:modified_time" content="2021-05-17T12:25:24.359Z">
+<meta property="article:published_time" content="2021-06-29T11:08:25.924Z">
+<meta property="article:modified_time" content="2021-06-29T13:08:05.705Z">
 <meta property="article:author" content="惧怕滴空梦">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/">
+<link rel="canonical" href="http://example.com/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>OLS回归（二） | Myblog</title>
+  <title> | Myblog</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          OLS回归（二）
+          
         </h1>
 
         <div class="post-meta">
@@ -223,16 +223,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-03-19 18:04:44" itemprop="dateCreated datePublished" datetime="2021-03-19T18:04:44+08:00">2021-03-19</time>
+              <time title="创建时间：2021-06-29 19:08:25 / 修改时间：21:08:05" itemprop="dateCreated datePublished" datetime="2021-06-29T19:08:25+08:00">2021-06-29</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-17 20:25:24" itemprop="dateModified" datetime="2021-05-17T20:25:24+08:00">2021-05-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -259,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -275,22 +269,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简单回归模型可以用来研究两个变量之间的关系。出于我们就将会看到的原因，简单回归模型要作为经验分析的一般工具，还存在着局限性。不过有时把它作为一个经验工具还是很合适的。</p>
+        <p>为了确定我们的多元回归模型是否显著，需要用到假设检验来对模型进行推断。常用的假设检验有t检验、F检验和LM检验等。</p>
 <span id="more"></span>
-<p>为什么要做多元回归分析？</p>
-<ul>
-<li><p>简单回归分析难以做到保持其它相关条件不变；</p>
-</li>
-<li><p>存在多个自变量时，估计是有偏的。</p>
-</li>
+<h2 id="多元回归模型：推断"><a href="#多元回归模型：推断" class="headerlink" title="多元回归模型：推断"></a>多元回归模型：推断</h2><h3 id="正态性假定"><a href="#正态性假定" class="headerlink" title="正态性假定"></a>正态性假定</h3><ul>
+<li>MLR6（正态性假定）：假设总体的误差是呈正态分布的；</li>
 </ul>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
-<li><p>关键假定：零条件均值假定：</p>
-<p>假定$E(u|X_1,X_2,\cdots,X_k)=E(u)=0$,那么总体回归函数为：</p>
-<script type="math/tex; mode=display">E(Y|X_1,X_2,\cdots,X_K)=\beta_0+\beta_1X_1+\beta_2X_2+\cdots+\beta_kX_k</script><p>多元回归分析在非实验环境中模拟了受控试验，即回归系数反映了保持其他解释变量不变的情况下，某个解释变量对被解释变量的影响</p>
-<h1 id="OLS估计"><a href="#OLS估计" class="headerlink" title="OLS估计"></a>OLS估计</h1></li>
-</ul>
-<h2 id="OLS估计方法"><a href="#OLS估计方法" class="headerlink" title="OLS估计方法"></a>OLS估计方法</h2><h2 id="OLS拟合优度"><a href="#OLS拟合优度" class="headerlink" title="OLS拟合优度"></a>OLS拟合优度</h2>
+<script type="math/tex; mode=display">E(u|x_1,\cdots,x_k)=E(u)=0\textbf{且}Var(u)=\sigma^2</script><p>MLR1-MLR6被称为经典线性模型假定（CLM），有了正态性假定，就可以构建t统计量，从而检验系数的显著水平。</p>
+<p>定理一：在MLR1-MLR6下，有$\hat\beta_j\sim Normal(\beta_j,Var(\hat \beta_j))$，对系数标准化，就有$(\hat \beta_j-\beta_j)/se(\hat\beta_j)\sim N(0,1)$，小样本时，$(\hat \beta_j-\beta_j)/se(\hat\beta_j)\sim t_{df}=t_{n-k-1}$.</p>
+<p>这样，我们就能构建判断系数是否显著的t统计量，若t值是统计显著的，那么我们就可以说$x_j$是一个还不错的自变量。具体的推断需要用到假设检验。</p>
+<h3 id="t检验"><a href="#t检验" class="headerlink" title="t检验"></a>t检验</h3><p>原假设$H_0:\beta_j=0$;   备择假设$H_1:\beta_j\neq0$</p>
+<p>t统计量：$t_{\hat\beta_j}=\hat\beta_j/se(\hat\beta_j)$,它度量了被估计的标准差于零相差多大，t越远离零，越能够拒绝原假设，t越接近零，越不能拒绝原假设。</p>
+<p>若$|t|&gt;c$则可以在$\alpha/2$下的显著水平下拒绝原假设（c为在含n-k-1个自由度的t分布的第$1-\alpha$分位数）</p>
+<p>同样的，我们也能够求出p值——$P(|T|&gt;|t|)$,也就是拒绝域的面积之和。t值越大越容易拒绝原假设，p值越小越容易拒绝原假设。</p>
+<h3 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h3><p>一个95%的置信区间为：[$\hat\beta_j-c\cdot se(\hat\beta_j),\hat\beta_j+c\cdot se(\hat\beta_j)$]其中c为$t_{n-k-1}$分布的第97.5个百分数。</p>
+<h3 id="F检验"><a href="#F检验" class="headerlink" title="F检验"></a>F检验</h3><p>t检验是对回归系数的一个线性假设的检验，有时候我们需要对多个回归系数的线性假设进行检验，这就需要用到F检验。</p>
+<p>$H_0:\beta_3=\beta_4=\beta_5=0$，$H_1:\textbf{至少有一个为零}$</p>
+<p>构建F统计量：$F=\frac{SSR_r-SSR_{ur}/q}{SSR_{ur}/(n-k-1)}=\frac{(R_{ur}^2-R_r^2)/q}{(1-R_{ur}^2)/df_{ur}}\sim F_{q,n-k-1}$</p>
+<p>q:分子自由度；n-k-1：分母自由度，F值越大越能够拒绝$H_0$而接受$H_1$。当$df\rightarrow \infty$时，5%的临界值$c=2.76$.</p>
+
     </div>
 
     
@@ -305,7 +301,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/03/19/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/" title="OLS回归（二）">http://example.com/2021/03/19/多元线性回归（二）/</a>
+    <a href="http://example.com/2021/06/29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" title="">http://example.com/2021/06/29/假设检验/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -325,13 +321,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/12/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" rel="prev" title="简单回归模型">
-      <i class="fa fa-chevron-left"></i> 简单回归模型
+    <a href="/2021/05/17/%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E4%BA%8C%EF%BC%89/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%81%87%E5%AE%9A/" rel="prev" title="高斯——马尔可夫假定">
+      <i class="fa fa-chevron-left"></i> 高斯——马尔可夫假定
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/19/%E7%AE%80%E5%8D%95%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="next" title="简单回归模型（二）">
-      简单回归模型（二） <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -391,7 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">OLS估计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS%E4%BC%B0%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">OLS估计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">OLS拟合优度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%EF%BC%9A%E6%8E%A8%E6%96%AD"><span class="nav-number">1.</span> <span class="nav-text">多元回归模型：推断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E6%80%81%E6%80%A7%E5%81%87%E5%AE%9A"><span class="nav-number">1.1.</span> <span class="nav-text">正态性假定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t%E6%A3%80%E9%AA%8C"><span class="nav-number">1.2.</span> <span class="nav-text">t检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-number">1.3.</span> <span class="nav-text">置信区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F%E6%A3%80%E9%AA%8C"><span class="nav-number">1.4.</span> <span class="nav-text">F检验</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
